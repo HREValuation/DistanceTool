@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRE DistanceTool</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h1>HRE DistanceTool</h1>
+  <p>輸入多個座標點，計算距離並匯出結果。</p>
+
+  <textarea id="editbox" placeholder="請輸入座標資料，每行一組，例如 218666.173,2676198.217"></textarea>
+  
+  <div class="center">
+    <label for="displayMode">顯示方式:</label>
+    <select id="displayMode" onchange="convert()">
+      <option value="table" selected>表格</option>
+      <option value="list">列表</option>
+    </select>
+    <button onclick="convert()">計算</button>
+  </div>
+  
+  <div id="resultBox"></div>
+  
+  <div class="center">
+    <button onclick="exportCSV()">匯出為 CSV</button>
+    <button onclick="exportExcel()">匯出為 Excel</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
